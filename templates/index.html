@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Recognition</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Flower Recognition</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="file" id="fileInput" accept="image/*" required>
+        <button type="submit">Predict Flower Type</button>
+    </form>
+
+    <img id="preview" src="#" alt="Image Preview" style="display: none;"/>
+    <div id="result"></div>
+
+    <footer>Powered by Deep Learning Model - Flower Recognition System</footer>
+
+    <script>
+        // Preview the uploaded image
+        document.getElementById('fileInput').onchange = function(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById('preview');
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            };
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = 'none';
+            }
+        };
+
+        // Handle form submission for image prediction
+        document.getElementById('uploadForm').onsubmit = async function(event) {
+            event.preventDefault();
+            const formData = new FormData();
+            const fileInput = document.getElementById('fileInput');
+            formData.append('file', fileInput.files[0]);
+
+            const response = await fetch('/predict', {
+                method: 'POST',
+                body: formData
+            });
+
+            const resultDiv = document.getElementById('result');
+            if (response.ok) {
+                const data = await response.json();
+                resultDiv.innerHTML = `<h3>Prediction: ${data.prediction}</h3>`;
+            } else {
+                resultDiv.innerHTML = `<h3>Error: Unable to classify the image</h3>`;
+            }
+        };
+    </script>
+</body>
+</html>
