@@ -4,7 +4,7 @@
 
 ## Project Overview 🌼🌷
 
-Bloomify Flower Recognition is a machine learning project designed to classify various flower species based on images. Utilizing deep learning techniques, this project aims to identify flowers accurately and efficiently, providing a valuable tool for flower enthusiasts, researchers, and gardeners.
+Bloomify Flower Recognition is a machine learning project designed to classify various flower species based on images. Utilizing machine learning techniques, this project aims to identify flowers accurately and efficiently, providing a valuable tool for flower enthusiasts, researchers, and gardeners.
 
 ## Dataset 🌹🌻
 
