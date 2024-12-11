@@ -68,18 +68,4 @@ To run the application, execute the following command:
 python main.py
 ```
 
-Make sure to adjust any configurations in the script as necessary, such as the path to the dataset or any model parameters.
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any enhancements, bug fixes, or suggestions.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- [Keras](https://keras.io/) - For building deep learning models.
-- [TensorFlow](https://www.tensorflow.org/) - For providing the underlying framework for model training.
 
