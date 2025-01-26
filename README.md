@@ -62,7 +62,7 @@ Make sure you have the following installed:
 
 ## Usage
 
-To run the application, execute the following command:
+To run the application, execute the following command
 
 ```bash
 python main.py
